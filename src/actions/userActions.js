@@ -3,7 +3,7 @@ import * as axiosUtil from './axiosUtil';
 import axios from 'axios';
 
 
-// todo redo this to work with backend
+// todo redo these methods to work with ftd backend
 
 export const doLogin = async (username, password) => {
     try {
@@ -27,12 +27,6 @@ export const registerUser = async (user) => {
         axios.defaults.headers.common['Authorization'] = `Bearer ${data.jwt}`;
         localStorage.setItem(LOGIN_OBJ_KEY, JSON.stringify(data));
     }
-    return data;
-};
-
-export const deleteUser = async (user) => {
-    const url = `${API_URL}/user/deleteUser`;
-    const data = await axiosUtil.postApi(url, user);
     return data;
 };
 
